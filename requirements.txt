@@ -38,7 +38,7 @@ Pillow==9.0.0
 pytz
 pyyaml
 lyricsgenius==3.0.1
-git+https://github.com/naya1503/SafoneAPI
+SafoneAPI
 pytgcalls==3.0.0.dev24
 PySocks
 pexpect
@@ -49,5 +49,5 @@ assemblyai
 removebg
 numpy
 opencv-python
-git+https://github.com/naya1503/mypyrogram@dev
 tornado
+git+https://github.com/naya1503/mypyrogram@dev
