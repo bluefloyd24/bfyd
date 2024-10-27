@@ -1,41 +1,41 @@
 {
-    "name": "Mix UserBot",
-    "description": "Mix Userbot Dibuat Untuk String Pyrogram Untuk ID 5 Pasti Aman.",
-    "logo": "https://telegra.ph//file/19b336da463a05d7d8f8c.jpg",
+    "name": "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥 UserBot",
+    "description": "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥 Userbot Dibuat Untuk String Pyrogram Untuk ID 5 Pasti Aman.",
+    "logo": "https://vault.pictures/p/8d8300ddb2b94708846aebc91b3b3c1d",
     "keywords": [
         "Pyrogram",
         "Userbot"
     ],
-    "repository": "https://github.com/naya1503/Mix-Userbot",
-    "success_url": "https://t.me/kenapanan",
+    "repository": "https://github.com/bluefloyd24/bfyd",
+    "success_url": "https://t.me/blque",
     "stack": "container",
     "env": {
         "api_id": {
-            "description": "Au ya cek my.telegram.org",
+            "description": "Get from my.telegram.org",
             "required": true
         },
         "api_hash": {
-            "description": "Au ya cek my.telegram.org",
+            "description": "Get from my.telegram.org",
             "required": true
         },
         "session": {
-            "description": "Silakan isi Pyrogram V2",
+            "description": "Session use Pyrogram V2",
             "required": true
         },
         "mongo_uri": {
-            "description": "Silakan isi Mongo Db/Mongo Url . Jika Build Redis Gagal . Cara ambil nya ketik #mongo di @kynansupport.",
+            "description": "Get mongo from MongoDB. Ask @blque first",
             "required": true
         },
         "db_name": {
-            "description": "Silakan isi DB_NAME. Isi aja : MixDB",
+            "description": "Fill : MixDB",
             "required": true
         },
         "heroku_api": {
-            "description": "Isi Coy Jan Dikosongin.",
+            "description": "Your heroku API",
             "required": true
         },
         "heroku_app_name": {
-            "description": "Isi Coy Jan Dikosongin",
+            "description": " Your heroku name, same with name above",
             "required": true
         }
     },
