@@ -34,7 +34,7 @@ async def check_logger():
         LOGGER.info("Creating Grup Log...")
         nama = "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot 𝗟𝗢𝗚𝗦"
         des = "𝗝𝗮𝗻𝗴𝗮𝗻 leave grup!\nGod bless me:) @blque"
-        log_pic = "https://vault.pictures/p/8d8300ddb2b94708846aebc91b3b3c1d"
+        log_pic = "https://telegra.ph/file/78fbd9d73e1f456857222.jpg"
         gc = await nlx.create_supergroup(nama, des)
         bhan = wget.download(f"{log_pic}")
         gmbr = {"video": bhan} if bhan.endswith(".mp4") else {"photo": bhan}
