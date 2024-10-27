@@ -9,7 +9,7 @@ authors:
 cmds: "**Bantuan Perintah**"
 err: "{} **Error:** {} \n\n**Silahkan laporkan ke @blque**"
 err_1: "**Error:** {}"
-proses: "{} **Sedang Diproses...**"
+proses: "{} **Proses perintah**"
 proses_1: "**Sedang Diproses...**"
 upload: "{} **Menunggah...**"
 klk_1: "Klik Disini"
