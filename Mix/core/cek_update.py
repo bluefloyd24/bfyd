@@ -51,7 +51,7 @@ async def cek_updater():
     for checks in repo.iter_commits(f"HEAD..origin/{upstream_branch}"):
         verification = str(checks.count())
     if verification == "":
-        LOGGER.info("Mix-Userbot is up-to-date!")
+        LOGGER.info("𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot is up-to-date!")
         return
     ordinal = lambda format: "%d%s" % (
         format,
@@ -79,7 +79,7 @@ async def cek_updater():
             return
 
         if "Already up to date." in output.decode():
-            LOGGER.info("Mix-Userbot Already up to date.")
+            LOGGER.info("𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot Already up to date.")
             return
 
         os.execl(sys.executable, sys.executable, "-m", "Mix")
