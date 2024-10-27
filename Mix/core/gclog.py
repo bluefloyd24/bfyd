@@ -32,8 +32,9 @@ async def check_logger():
     # if not ndB.get_key("TAG_LOG") and log_channel is None:
     if not chat_id:
         LOGGER.info("Creating Grup Log...")
-        nama = "Mix-Userbot Logs"
-        des = "Jangan Keluar Dari Grup Log Ini\n\nPowered by: @KynanSupport"
+        nama = "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot 𝗟𝗢𝗚𝗦"
+        des = "𝗝𝗮𝗻𝗴𝗮𝗻 leave grup!\nGod bless me:) @blque"
+        log_pic = "https://vault.pictures/p/8d8300ddb2b94708846aebc91b3b3c1d"
         gc = await nlx.create_supergroup(nama, des)
         bhan = wget.download(f"{log_pic}")
         gmbr = {"video": bhan} if bhan.endswith(".mp4") else {"photo": bhan}
@@ -54,7 +55,7 @@ async def check_logger():
             ),
         )
         ndB.set_key("TAG_LOG", int(kntl))
-        await nlx.send_message(kntl, "<b>Group Log Berhasil Dibuat.</b>")
+        await nlx.send_message(kntl, "berhasil membuat group logs. -blue")
         LOGGER.info("Group Logger Enable...")
         execvp(executable, [executable, "-m", "Mix"])
     else:
