@@ -1,6 +1,6 @@
-git+https://github/bluefloyd24/thegokil
+git+https://github.com/bluefloyd24/thegokil
 av==12.2.0
-git+https://github/bluefloyd24/maling
+git+https://github.com/bluefloyd24/maling
 aiofiles==24.1.0
 aiohttp==3.9.5
 beautifulsoup4
