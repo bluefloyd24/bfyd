@@ -9,7 +9,7 @@ authors:
 cmds: "**Bantuan Perintah**"
 err: "{} **Error:** {} \n\n**Silahkan laporkan ke @blque**"
 err_1: "**Error:** {}"
-proses: "{} **Proses perintah**"
+proses: "{} **Memproses perintah...**"
 proses_1: "**Sedang Diproses...**"
 upload: "{} **Menunggah...**"
 klk_1: "Klik Disini"
@@ -241,7 +241,7 @@ gcs_16: "{} **Hasil Broadcast Pengguna :\n{} Berhasil di `{}` Grup.\n{} Gagal di
 # alive 
 alv_1: "**Author**"
 alv_2: "**Connoisseur**"
-alv_3: "**𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot**\n    **status:** {}\n      **dc_id:** {}\n      **ping_dc:** {} ms\n      **antipm:** {}\n      **pengguna:** {}\n      **bot**: {}\n      **grup:** {}\n      **durasi_bot:** {}"
+alv_3: "**𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2**\n    **status:** {}\n      **dc_id:** {}\n      **ping_dc:** {} ms\n      **antipm:** {}\n      **pengguna:** {}\n      **bot**: {}\n      **grup:** {}\n      **durasi_bot:** {}"
 alv_4: "Support"
 
 # global
@@ -298,10 +298,10 @@ hero_10: "{} **Hanya untuk pengguna Heroku.**"
 hero_11: "{} **DYNO USAGE\n\n{} <u>Usage:</u>\nTotal Used:\n`{}h` `{}m` [`{}%`]\n\n{} <u>Remaining Quota:</u>\nTotal Left: `{}h` `{}m` [`{}%`]"
 hero_12: "{} **Kesalahan Perintah Git.**"
 hero_13: "{} **Repositori Git Tidak Valid.**"
-hero_14: "**𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot sudah versi paling terbaru.**"
-hero_15: "**Pembaruan baru tersedia untuk 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot !\n\n➣ Mendorong Pembaruan Sekarang\n\nPembaruan:**\n\n"
-hero_16: "**Pembaruan baru tersedia untuk 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot!\n\n➣ Mendorong Pembaruan Sekarang\n\nPembaruan:\n\n[Klik Di Sini untuk memeriksa Pembaruan]({})**"
-hero_17: "{} {}\n\n**𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot berhasil diperbarui! Sekarang, tunggu 2 - 3 menit hingga bot dimulai ulang!**"
+hero_14: "**𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 sudah versi paling terbaru.**"
+hero_15: "**Pembaruan baru tersedia untuk 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 !\n\n➣ Mendorong Pembaruan Sekarang\n\nPembaruan:**\n\n"
+hero_16: "**Pembaruan baru tersedia untuk 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2!\n\n➣ Mendorong Pembaruan Sekarang\n\nPembaruan:\n\n[Klik Di Sini untuk memeriksa Pembaruan]({})**"
+hero_17: "{} {}\n\n**𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 berhasil diperbarui! Sekarang, tunggu 2 - 3 menit hingga bot dimulai ulang!**"
 
 # info
 info_1: "{} **Saya tidak berada digrup itu!**"
@@ -387,7 +387,7 @@ paste_3: "{} **Berhasil! [Tautan Disini]({})**"
 ping_1: "**{} Pong `{}ms`**\n**{} Uptime !! `{}`**"
 
 # markdown
-mark_1: "<b>Markdown Formatting</b>\n<b>Anda dapat memformat pesan Anda menggunakan <b>tebal</b>, <i>miring</i>, <u>garis bawah</u>, <strike>coret</strike>, dan banyak lagi.</b>\n\n<code>`kata kode`</code>: Tanda kutip terbalik digunakan Buat font monospace. Ditampilkan sebagai: <code>kata kode</code>.\n\n<code>__miring__</code>: Garis bawah digunakan Buat font miring. Ditampilkan sebagai: <i>kata miring</i>.\n\n<code>**tebal**</code>: Asterisk digunakan Buat font tebal. Ditampilkan sebagai: <b>kata tebal</b>.\n\n<code>--garis bawah--</code>: Buat membuat teks <u>garis bawah</u>.\n\n<code>~~coret~~</code>: Tilda digunakan Buat strikethrough. Ditampilkan sebagai: <strike>coret</strike>.\n\n<code>||spoiler||</code>: Garis vertikal ganda digunakan Buat spoiler. Ditampilkan sebagai: <spoiler>Spoiler</spoiler>.\n\n<code>[hyperlink](contoh)</code>: Ini adalah pemformatan yang digunakan Buat hyperlink.\n\n<code>Hallo Disini ~ [Tombol Saya|https://link.com]</code>: Ini adalah pemformatan yang digunakan Buat membuat tombol.\n\nAnda juga bisa membuat tombol callback_data dengan diawal tanda <code>#</code> . Untuk lebih lanjut silahkan ke @KynanSupport untuk meminta bantuan."
+mark_1: "<b>Markdown Formatting</b>\n<b>Anda dapat memformat pesan Anda menggunakan <b>tebal</b>, <i>miring</i>, <u>garis bawah</u>, <strike>coret</strike>, dan banyak lagi.</b>\n\n<code>`kata kode`</code>: Tanda kutip terbalik digunakan Buat font monospace. Ditampilkan sebagai: <code>kata kode</code>.\n\n<code>__miring__</code>: Garis bawah digunakan Buat font miring. Ditampilkan sebagai: <i>kata miring</i>.\n\n<code>**tebal**</code>: Asterisk digunakan Buat font tebal. Ditampilkan sebagai: <b>kata tebal</b>.\n\n<code>--garis bawah--</code>: Buat membuat teks <u>garis bawah</u>.\n\n<code>~~coret~~</code>: Tilda digunakan Buat strikethrough. Ditampilkan sebagai: <strike>coret</strike>.\n\n<code>||spoiler||</code>: Garis vertikal ganda digunakan Buat spoiler. Ditampilkan sebagai: <spoiler>Spoiler</spoiler>.\n\n<code>[hyperlink](contoh)</code>: Ini adalah pemformatan yang digunakan Buat hyperlink.\n\n<code>Hallo Disini ~ [Tombol Saya|https://link.com]</code>: Ini adalah pemformatan yang digunakan Buat membuat tombol.\n\nAnda juga bisa membuat tombol callback_data dengan diawal tanda <code>#</code> . Untuk lebih lanjut silahkan ke @blque untuk meminta bantuan."
 mark_2: "<b>Fillings</b>\n\nAnda juga dapat menyesuaikan isi pesan Anda dengan data kontekstual. Misalnya, Anda bisa menyebut nama pengguna dalam pesan selamat datang, atau menyebutnya dalam filter!\n\n<b>Isian yang didukung:</b>\n\n<code>{first}</code>: Nama depan pengguna.\n<code>{last}</code>: Nama belakang pengguna.\n<code>{fullname}</code>: Nama lengkap pengguna.\n<code>{username}</code>: Nama pengguna pengguna. Jika mereka tidak memiliki satu, akan menyebutkan pengguna tersebut.\n<code>{mention}</code>: Menyebutkan pengguna dengan nama depan mereka.\n<code>{id}</code>: ID pengguna.\n<code>{chatname}</code>: Nama obrolan."
 mark_3: "**Untuk melihat format markdown silahkan klik tombol dibawah.**"
 
@@ -406,7 +406,7 @@ pmper_10: "{} **Saya sudah memberi tahu `{}` peringatan\nTunggu Owner Saya menye
 # quote
 qot_1: "{} **Daftar Warna :\n\n**"
 qot_2: "{} **Ini adalah list warna untuk latar belakang quote.**"
-qot_3: "{} **Si anjing mengatasnamakan Developer!**"
+qot_3: "{} **Anda mengatasnamakan Developer!**"
 qot_4: "{} **Batas pesan adalah 10!**"
 them_1: "{} **Daftar Tema :\n\n**"
 them_2: "{} **Ini adalah list tema.**"
