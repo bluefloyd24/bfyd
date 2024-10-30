@@ -36,7 +36,7 @@ class Userbot(Client):
             api_id=api_id,
             api_hash=api_hash,
             session_string=session,
-            device_model="𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot",
+            device_model="𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2",
             plugins=dict(root="modular"),
             # proxy=self._configure_proxy(),
             **kwargs,
