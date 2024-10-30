@@ -16,7 +16,7 @@ __help__ = get_cgr("help_repo")
 
 @ky.ubot("repo|repository")
 async def repo(c, m):
-    link = await get("https://github.com/bluefloyd24/bfyd")
+    link = await get("https://api.github.com/bluefloyd24/bfyd")
     orgnya = "".join(
         f"**{count}.** [{org['login']}]({org['html_url']})\n"
         for count, org in enumerate(link, start=1)
