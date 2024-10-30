@@ -69,6 +69,8 @@ async def _(c: nlx, m):
     global berenti
 
     msg = await m.reply(cgr("proses").format(em.proses))
+    await msg.delete()
+
     berenti = True
     try:
         count_message = int(m.command[1])
@@ -106,8 +108,7 @@ async def _(c: nlx, m):
                     pass
 
     berenti = False
-
-    await msg.delete()
+ 
     await m.delete()
 
 
