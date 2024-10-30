@@ -87,7 +87,7 @@ async def _(c, cq):
     global hitung
     kb = calc_help()
     data = cq.data.split("_")[1]
-    teks = "Mix-Userbot Calculator"
+    teks = "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 Calculator"
     if data not in mmk:
         return
     user = cq.from_user
@@ -123,7 +123,7 @@ async def _(c, cq):
     elif data == "KLOS":
         if user.id != nlx.me.id:
             return await cq.answer(
-                f"{fullname} KAYA KONTOL! SIRIK AJA LO!\nGAUSAH DIPENCET! ANJING! MEMEK! NGENTOT! BELI SENDIRI SANA!!",
+                f"{fullname} , Anda tidak dapat mengakses ini!",
                 show_alert=True,
             )
         if cq.message:
@@ -136,7 +136,7 @@ async def _(c, cq):
     else:
         if user.id != nlx.me.id:
             return await cq.answer(
-                f"BELI LAH Mix-Userbot WAHAI {fullname}.\nHANYA 35k, ANDA SUDAH BISA MENIKMATI SEKIAN BANYAKNYA FITUR DI Mix-Userbot!",
+                f"BELI LAH 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 WAHAI {fullname}.\nHANYA 25k, ANDA SUDAH BISA MENIKMATI SEKIAN BANYAKNYA FITUR DI 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2!",
                 show_alert=True,
             )
         hitung.append(data)
@@ -165,7 +165,7 @@ def unpacked2(inline_message_id: str):
 async def _(_, cq):
     if cq.from_user.id != nlx.me.id:
         return await cq.answer(
-            "Hanya pembuat Mix-Userbot yang dapat menutup kalkulator.",
+            "Hanya pembuat 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot yang dapat menutup kalkulator.",
             show_alert=True,
         )
 
