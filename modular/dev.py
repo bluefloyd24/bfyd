@@ -82,7 +82,7 @@ async def _(c, m):
         text=True,
     )
 
-    char = "Mix-Userbot#" if os.getuid() == 0 else "Mix-Userbot"
+    char = "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2#" if os.getuid() == 0 else "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2"
     text = f"{char} <code>{cmd_text}</code>\n\n"
 
     try:
@@ -129,7 +129,7 @@ async def _(c: nlx, m):
         except Exception as error:
             return await m.reply(str(error))
     else:
-        return await m.reply("noob")
+        return await m.reply("apa???!")
 
 
 @ky.ubot("eval|ev")
