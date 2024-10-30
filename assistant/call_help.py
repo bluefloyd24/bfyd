@@ -49,7 +49,7 @@ async def _(c, cq):
     )
     if data == "okein":
         if org != nlx.me.id:
-            return await cq.answer("This Button Not For You FCVK !!!!", True)
+            return await cq.answer("This button isnt for you!", True)
         udB.oke_pc(int(sapa))
         return await bot.edit_inline_text(
             cq.inline_message_id, "User Has Been Approved To PM."
@@ -57,7 +57,7 @@ async def _(c, cq):
 
     if data == "blikbae":
         if org != nlx.me.id:
-            return await cq.answer("This Button Not For You FCVK !!!!", True)
+            return await cq.answer("This button isnt for you!", True)
         await bot.edit_inline_text(
             cq.inline_message_id, "Successfully blocked the users."
         )
