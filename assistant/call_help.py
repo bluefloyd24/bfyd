@@ -176,7 +176,7 @@ async def _(c, cq):
         else:
             try:
                 await cq.edit_message_text(
-                    text=text + f"\n<b>© 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot - @blque</b>",
+                    text=text + f"\n<b>© 𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 - @blque</b>",
                     reply_markup=button,
                     disable_web_page_preview=True,
                 )
