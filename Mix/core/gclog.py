@@ -32,8 +32,8 @@ async def check_logger():
     # if not ndB.get_key("TAG_LOG") and log_channel is None:
     if not chat_id:
         LOGGER.info("Creating Grup Log...")
-        nama = "𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot 𝗟𝗢𝗚𝗦 v2"
-        des = "𝗝𝗮𝗻𝗴𝗮𝗻 leave grup!\nGod bless me:) @blque"
+        nama = "botlogs.-𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥 v2"
+        des = "𝗝𝗮𝗻𝗴𝗮𝗻 leave grup!\renewal just chat @blque"
         log_pic = "https://telegra.ph/file/78fbd9d73e1f456857222.jpg"
         gc = await nlx.create_supergroup(nama, des)
         bhan = wget.download(f"{log_pic}")
