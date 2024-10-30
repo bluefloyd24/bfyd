@@ -100,7 +100,7 @@ async def _(c: nlx, m):
                 if not berenti:
                     break
                 try:
-                    await m.reply(m.text.split(None, 3)[3])
+                    await m.send_message(m.text.split(None, 3)[3])
                     await asyncio.sleep(count_delay)
                 except:
                     pass
