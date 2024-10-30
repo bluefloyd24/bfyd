@@ -68,24 +68,25 @@ async def _(c: nlx, m):
     em.initialize()
     global berenti
 
-    reply = m.reply_to_message
     msg = await m.reply(cgr("proses").format(em.proses))
     berenti = True
-    if reply:
+    try:
+        count_message = int(m.command[1])
+        count_delay = int(m.command[2])
+        text_to_send = m.text.split(None, 3)[3]
+    except Exception as error:
+        return await msg.edit(str(error))
+
+    for i in range(count_message):
+        if not berenti:
+            break
         try:
-            count_message = int(m.command[1])
-            count_delay = int(m.command[2])
-        except Exception as error:
-            return await msg.edit(str(error))
-        for i in range(count_message):
-            if not berenti:
-                break
-            try:
-                await reply.copy(m.chat.id)
-                msg.delete()
-                await asyncio.sleep(count_delay)
-            except:
-                pass
+            await c.send_message(m.chat.id, text_to_send)
+            await asyncio.sleep(count_delay)
+        except Exception as e:
+            await msg.edit(f"Error: {e}")
+            break
+
     else:
         if len(m.command) < 4:
             return await msg.edit(cgr("spm_2").format(em.gagal, m.command))
