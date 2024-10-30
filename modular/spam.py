@@ -70,7 +70,8 @@ async def _(c: nlx, m):
 
     msg = await m.reply(cgr("proses").format(em.proses))
     await msg.delete()
-
+    await m.delete()
+ 
     berenti = True
     try:
         count_message = int(m.command[1])
@@ -108,8 +109,6 @@ async def _(c: nlx, m):
                     pass
 
     berenti = False
- 
-    await m.delete()
 
 
 @ky.ubot("cspam")
