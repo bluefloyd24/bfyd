@@ -107,7 +107,7 @@ async def _(c, iq):
 
 @ky.inline("^kalku_in")
 async def _(c, iq):
-    txt = "<b>Mix-Userbot Calculator</b>"
+    txt = "<b>𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2 Calculator</b>"
     berak = calc_help()
     await c.answer_inline_query(
         iq.id,
