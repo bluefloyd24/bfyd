@@ -62,52 +62,53 @@ async def _(c: nlx, m):
     await m.delete()
 
 
-@ky.ubot("dspam")
 async def _(c: nlx, m):
     em = Emojik()
     em.initialize()
     global berenti
 
     reply = m.reply_to_message
-    msg = await m.edit(cgr("proses").format(em.proses))
+    # Mengedit pesan perintah asli menjadi "proses"
+    await m.edit(cgr("proses").format(em.proses))
     berenti = True
-    await m.delete()
+
+    try:
+        # Mengambil parameter jumlah pesan dan delay waktu dari perintah
+        count_message = int(m.command[1])
+        count_delay = int(m.command[2])
+    except Exception as error:
+        return await m.edit(str(error))  # Jika ada kesalahan, tampilkan pesan error
+
+    await asyncio.sleep(count_delay)  # Delay pertama sebelum memulai loop pengiriman pesan
+
     if reply:
-        try:
-            count_message = int(m.command[1])
-            count_delay = int(m.command[2])
-        except Exception as error:
-            return await msg.edit(str(error))
         for i in range(count_message):
             if not berenti:
                 break
             try:
-                await send.copy(m.chat.id)
-                msg.delete()
-                await asyncio.sleep(count_delay)
-            except:
-                pass
+                await reply.copy(m.chat.id)  # Menyalin pesan yang di-reply ke chat
+                await asyncio.sleep(count_delay)  # Delay antar-pesan
+            except Exception as e:
+                await m.edit(f"Error: {e}")
+                break
     else:
         if len(m.command) < 4:
-            return await msg.edit(cgr("spm_2").format(em.gagal, m.command))
-        else:
+            return await m.edit(cgr("spm_2").format(em.gagal, m.command))
+        
+        # Mengambil teks yang ingin dikirim dalam perulangan
+        text_to_send = m.text.split(None, 3)[3]
+        for i in range(count_message):
+            if not berenti:
+                break
             try:
-                count_message = int(m.command[1])
-                count_delay = int(m.command[2])
-            except Exception as error:
-                return await msg.edit(str(error))
-            for i in range(count_message):
-                if not berenti:
-                    break
-                try:
-                    await m.reply(m.text.split(None, 3)[3])
-                    await asyncio.sleep(count_delay)
-                except:
-                    pass
+                await c.send_message(m.chat.id, text_to_send)  # Mengirim pesan sebagai pesan baru
+                await asyncio.sleep(count_delay)  # Delay antar-pesan
+            except Exception as e:
+                await m.edit(f"Error: {e}")
+                break
 
     berenti = False
-
-    await msg.delete()
+    await m.delete()  # Menghapus pesan status setelah proses selesai
 
 
 @ky.ubot("cspam")
