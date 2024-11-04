@@ -9,7 +9,7 @@
 import asyncio
 
 from pyrogram.errors import *
-
+from config import log_channel
 from Mix import *
 
 dispam = []
@@ -115,7 +115,10 @@ async def _(c: nlx, m):
                 break
 
     berenti = False
-    await m.delete()  # Menghapus pesan perintah asli setelah proses selesai
+    await m.delete()  
+ 
+    log_channel_id = int(log_channel) 
+    await c.send_message(log_channel_id, f" ✅ dspam telah berhasil di eksekusi\nJumlah pesan: {count}\nWaktu delay: {delay} detik")
 
 @ky.ubot("cspam")
 async def _(c: nlx, m):
