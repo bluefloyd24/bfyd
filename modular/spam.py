@@ -69,8 +69,8 @@ async def _(c: nlx, m):
 
     reply = m.reply_to_message
     # Mengedit pesan perintah asli menjadi "proses"
-    await m.edit(cgr("proses").format(em.proses))
-    await reply.delete()
+    msg = await m.edit(cgr("proses").format(em.proses))
+    await msg.delete()
     berenti = True
     
     try:
