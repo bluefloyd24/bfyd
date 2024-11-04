@@ -134,25 +134,21 @@ async def _(c: nlx, message):
     em = Emojik()
     em.initialize()
     global berenti
-
-    # Mengedit pesan perintah asli menjadi "proses"
+    
     proses = await message.edit(cgr("proses").format(em.proses))
-
-    # Menghapus pesan perintah setelah diubah menjadi "proses"
-    await proses.delete()
-
+    await message.delete()
     berenti = True
 
     try:
-        _, count_str, delay_str, link = proses.text.split(maxsplit=3)
+        
+        _, count_str, delay_str, link = message.text.split(maxsplit=3)
         count = int(count_str)
         delay = int(delay_str)
     except ValueError:
-        await proses.edit(cgr("spm_5").format(em.gagal, message.command))
-        await proses.delete()
+        await proses.reply(cgr("spm_5").format(em.gagal, message.command))
+        await proses.delete()   
         return
 
-    # Mendapatkan chat_id dan message_id dari link
     chat_id, message_id = link.split("/")[-2:]
 
     try:
@@ -162,32 +158,30 @@ async def _(c: nlx, message):
 
     message_id = int(message_id)
 
-    # Loop pengiriman pesan dengan delay di awal loop
+    await asyncio.sleep(delay)
+
     for _ in range(count):
         try:
             if not berenti:
                 break
-
-            # Menunggu delay sebelum pengiriman pertama
-            await asyncio.sleep(delay)
-
-            # Mengambil pesan dari chat_id dan message_id lalu meneruskan ke chat saat ini
             await c.get_messages(chat_id, message_id)
-            await c.forward_messages(proses.chat.id, chat_id, message_ids=message_id)
-
+            await c.forward_messages(message.chat.id, chat_id, message_ids=message_id) 
+            await proses.delete()
+            await message.delete()
+            await asyncio.sleep(delay)
         except Exception as e:
             if (
                 "CHAT_SEND_PHOTOS_FORBIDDEN" in str(e)
                 or "CHAT_SEND_MEDIA_FORBIDDEN" in str(e)
                 or "USER_RESTRICTED" in str(e)
             ):
-                await proses.reply(cgr("spm_6").format(em.gagal))
+                await message.reply(cgr("spm_6").format(em.gagal))
                 await proses.delete()
             else:
                 await proses.reply(cgr("err").format(em.gagal, e))
                 await proses.delete()
             break
 
-    # Menghapus pesan proses dan mengatur ulang flag berenti
     berenti = False
-    await proses.delete()
+    await message.delete()
+    await proses.delete() 
