@@ -68,20 +68,26 @@ async def _(c: nlx, m):
     global berenti
 
     reply = m.reply_to_message
-    # Mengedit pesan perintah asli menjadi "proses"
-    msg = await m.edit(cgr("proses").format(em.proses))
-    await msg.delete()
+
+    # Mengedit pesan perintah asli menjadi "proses" dan kemudian menghapusnya
+    try:
+        msg = await m.edit(cgr("proses").format(em.proses))
+        await msg.delete()  # Hapus pesan "proses" setelah diedit
+    except Exception as error:
+        return await m.reply(f"Error: {error}")
+
     berenti = True
     
     try:
         # Mengambil parameter jumlah pesan dan delay waktu dari perintah
         count_message = int(m.command[1])
         count_delay = int(m.command[2])
-    except Exception as error:
-        return await m.edit(str(error))  # Jika ada kesalahan, tampilkan pesan error
+    except (IndexError, ValueError):
+        return await m.reply(cgr("spm_2").format(em.gagal, m.command))  # Menampilkan pesan error jika perintah salah atau kurang lengkap
 
     await asyncio.sleep(count_delay)  # Delay pertama sebelum memulai loop pengiriman pesan
 
+    # Proses pengiriman pesan berulang
     if reply:
         for i in range(count_message):
             if not berenti:
@@ -90,11 +96,11 @@ async def _(c: nlx, m):
                 await reply.copy(m.chat.id)  # Menyalin pesan yang di-reply ke chat
                 await asyncio.sleep(count_delay)  # Delay antar-pesan
             except Exception as e:
-                await m.edit(f"Error: {e}")
+                await m.reply(f"Error: {e}")
                 break
     else:
         if len(m.command) < 4:
-            return await m.edit(cgr("spm_2").format(em.gagal, m.command))
+            return await m.reply(cgr("spm_2").format(em.gagal, m.command))  # Menampilkan pesan error jika perintah kurang lengkap
         
         # Mengambil teks yang ingin dikirim dalam perulangan
         text_to_send = m.text.split(None, 3)[3]
@@ -105,12 +111,11 @@ async def _(c: nlx, m):
                 await c.send_message(m.chat.id, text_to_send)  # Mengirim pesan sebagai pesan baru
                 await asyncio.sleep(count_delay)  # Delay antar-pesan
             except Exception as e:
-                await m.edit(f"Error: {e}")
+                await m.reply(f"Error: {e}")
                 break
 
     berenti = False
-    await m.delete()  # Menghapus pesan status setelah proses selesai
-
+    await m.delete()  # Menghapus pesan perintah asli setelah proses selesai
 
 @ky.ubot("cspam")
 async def _(c: nlx, m):
