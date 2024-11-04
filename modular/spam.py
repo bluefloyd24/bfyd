@@ -68,25 +68,41 @@ async def _(c: nlx, m):
     em.initialize()
     global berenti
 
-    reply = await event.get_reply_message()
-    input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
-    try:
-        sleeptimet = sleeptimem = float(input_str[0])
-    except Exception:
-        return await eod(
-            event, get_string("dspam_1").format(cmd)
-        )
-    xnxx = input_str[1:]
-    try:
-        int(xnxx[0])
-    except Exception:
-        return await eod(
-            event, get_string("dspam_1").format(cmd)
-        )
-    await event.delete()
-    addgvar("spamwork", True)
-    await spam_function(event, reply, xnxx, sleeptimem, sleeptimet, DelaySpam=True)
-
+    reply = m.reply_to_message
+    msg = await m.edit(cgr("proses").format(em.proses))
+    berenti = True
+    if reply:
+        try:
+            count_message = int(m.command[1])
+            count_delay = int(m.command[2])
+        except Exception as error:
+            return await msg.edit(str(error))
+        for i in range(count_message):
+            if not berenti:
+                break
+            try:
+                await send.copy(m.chat.id)
+                msg.delete()
+                await asyncio.sleep(count_delay)
+            except:
+                pass
+    else:
+        if len(m.command) < 4:
+            return await msg.edit(cgr("spm_2").format(em.gagal, m.command))
+        else:
+            try:
+                count_message = int(m.command[1])
+                count_delay = int(m.command[2])
+            except Exception as error:
+                return await msg.edit(str(error))
+            for i in range(count_message):
+                if not berenti:
+                    break
+                try:
+                    await m.reply(m.text.split(None, 3)[3])
+                    await asyncio.sleep(count_delay)
+                except:
+                    pass
 
     berenti = False
 
