@@ -61,7 +61,7 @@ async def _(c: nlx, m):
     await msg.delete()
     await m.delete()
 
-
+@ky.ubot("dspam")
 async def _(c: nlx, m):
     em = Emojik()
     em.initialize()
