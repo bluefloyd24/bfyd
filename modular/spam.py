@@ -68,40 +68,24 @@ async def _(c: nlx, m):
     em.initialize()
     global berenti
 
-    # Check if the chat is in the blacklist
-    if m.chat.id in BLACKLIST_CHAT:
-        return await m.reply("Not work on this group!")  # You can replace with your own blacklist message
-
-    reply = await m.reply_to_message
-    input_str = m.text.split(maxsplit=2)  # Get input after the command
+    reply = await event.get_reply_message()
+    input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
     try:
-        # Parse the count and delay from the command input
-        count_message = int(input_str[1])
-        count_delay = float(input_str[2])  # Allow for decimal values for delay
-        message_text = input_str[3] if len(input_str) > 3 else ""  # Message text
-    except (ValueError, IndexError):
-        return await m.reply("Usage: .dspam <count> <delay> <message>\nExample: .dspam 5 2 Hello")
-
-    await m.delete()  # Delete the command message to keep the chat clean
-    berenti = True  # Set to True to allow the process to continue
-
-    if reply:  # If replying to a message
-        for _ in range(count_message):
-            if not berenti:
-                break
-            await reply.copy(m.chat.id)  # Copy the replied message to the chat
-            await asyncio.sleep(count_delay)  # Wait for the specified delay
-    else:  # If no reply, send the specified message text
-        for _ in range(count_message):
-            if not berenti:
-                break
-            await m.reply(message_text)  # Send the provided message text
-            await asyncio.sleep(count_delay)  # Wait for the specified delay
-
-    berenti = False  # Reset the stopping variable
-
-    # Optionally inform the user when done
-    await m.reply("Done sending messages.")
+        sleeptimet = sleeptimem = float(input_str[0])
+    except Exception:
+        return await eod(
+            event, get_string("dspam_1").format(cmd)
+        )
+    xnxx = input_str[1:]
+    try:
+        int(xnxx[0])
+    except Exception:
+        return await eod(
+            event, get_string("dspam_1").format(cmd)
+        )
+    await event.delete()
+    addgvar("spamwork", True)
+    await spam_function(event, reply, xnxx, sleeptimem, sleeptimet, DelaySpam=True)
 
 
     berenti = False
