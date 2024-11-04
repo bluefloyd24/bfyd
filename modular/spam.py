@@ -71,7 +71,7 @@ async def _(c: nlx, m):
     # Mengedit pesan perintah asli menjadi "proses"
     await m.edit(cgr("proses").format(em.proses))
     berenti = True
-
+    await reply.delete()
     try:
         # Mengambil parameter jumlah pesan dan delay waktu dari perintah
         count_message = int(m.command[1])
