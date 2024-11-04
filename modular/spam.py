@@ -7,10 +7,13 @@
 ################################################################
 
 import asyncio
+
 from pyrogram.errors import *
+
 from Mix import *
 
 dispam = []
+
 berenti = False
 
 __modles__ = "Spam"
@@ -40,6 +43,7 @@ async def _(c: nlx, m):
     else:
         if len(m.command) < 2:
             return await msg.edit(cgr("spm_1").format(em.gagal, m.command))
+
         else:
             try:
                 count_message = int(m.command[1])
@@ -64,34 +68,46 @@ async def _(c: nlx, m):
     em.initialize()
     global berenti
 
+    reply = m.reply_to_message
     msg = await m.reply(cgr("proses").format(em.proses))
-    await msg.delete()
-    await m.delete()
- 
     berenti = True
-    try:
-        # Check if command format is correct, else provide usage message
-        if len(m.command) < 4:
-            return await m.reply("Usage: .dspam <count> <delay> <message>\nExample: .dspam 5 2 Hello")
-        
-        count_message = int(m.command[1])
-        count_delay = int(m.command[2])
-        text_to_send = m.text.split(None, 3)[3]
-    except Exception as error:
-        return await msg.edit(f"Error: {error}")
-
-    for i in range(count_message):
-        if not berenti:
-            break
+    if reply:
         try:
-            await c.send_message(m.chat.id, text_to_send)
-            await asyncio.sleep(count_delay)
-        except Exception as e:
-            await msg.edit(f"Error: {e}")
-            break
+            count_message = int(m.command[1])
+            count_delay = int(m.command[2])
+        except Exception as error:
+            return await msg.edit(str(error))
+        for i in range(count_message):
+            if not berenti:
+                break
+            try:
+                await reply.copy(m.chat.id)
+                msg.delete()
+                await asyncio.sleep(count_delay)
+            except:
+                pass
+    else:
+        if len(m.command) < 4:
+            return await msg.edit(cgr("spm_2").format(em.gagal, m.command))
+        else:
+            try:
+                count_message = int(m.command[1])
+                count_delay = int(m.command[2])
+            except Exception as error:
+                return await msg.edit(str(error))
+            for i in range(count_message):
+                if not berenti:
+                    break
+                try:
+                    await m.reply(m.text.split(None, 3)[3])
+                    await asyncio.sleep(count_delay)
+                except:
+                    pass
 
     berenti = False
 
+    await msg.delete()
+    await m.delete()
 
 
 @ky.ubot("cspam")
@@ -103,6 +119,7 @@ async def _(c: nlx, m):
         return await m.reply(cgr("spm_3").format(em.gagal))
     berenti = False
     await m.reply(cgr("spm_4").format(em.sukses))
+    return
 
 
 @ky.ubot("dspamfw")
@@ -110,6 +127,7 @@ async def _(c: nlx, message):
     em = Emojik()
     em.initialize()
     global berenti
+    message.reply_to_message
     proses = await message.reply(cgr("proses").format(em.proses))
     berenti = True
 
