@@ -98,7 +98,8 @@ async def _(c: nlx, m):
             break
 
     berenti = False
-    else:
+ 
+   else:
         if len(m.command) < 4:
             return await msg.edit(cgr("spm_2").format(em.gagal, m.command))
         else:
