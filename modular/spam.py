@@ -12,6 +12,24 @@ from pyrogram.errors import *
 from config import log_channel
 from Mix import *
 
+from config import log_channel
+from team.nandev.database import ndB
+
+async def log_spam_result(jumlah_pesan, delay, target_chat):
+    
+    chat_id = int(log_channel) if log_channel else ndB.get_key("TAG_LOG")
+    if chat_id:
+        await bot.send_message(
+            chat_id,
+            f"""
+Spam selesai:
+    - Jumlah Pesan: {jumlah_pesan}
+    - Delay Antar Pesan: {delay} detik
+    - Target: {target_chat}
+""",
+        )
+
+
 dispam = []
 
 berenti = False
@@ -117,8 +135,9 @@ async def _(c: nlx, m):
     berenti = False
     await m.delete()  
  
-    log_channel_id = int(log_channel) 
-    await c.send_message(log_channel_id, f" ✅ dspam telah berhasil di eksekusi\nJumlah pesan: {count}\nWaktu delay: {delay} detik")
+    await log_spam_result(count_message, count_delay, m.chat.title or m.chat.id)
+
+    await m.delete()
 
 @ky.ubot("cspam")
 async def _(c: nlx, m):
@@ -188,3 +207,7 @@ async def _(c: nlx, message):
     berenti = False
     await message.delete()
     await proses.delete() 
+
+    await log_spam_result(count_message, count_delay, m.chat.title or m.chat.id)
+
+    await m.delete()
