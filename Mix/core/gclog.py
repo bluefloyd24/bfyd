@@ -69,13 +69,12 @@ async def getFinish():
         await bot.send_message(
             int(chat_id),
             f"""
-<b>Userbot Successfully Deploy !!</b>
-
-<b>Modules : {len(CMD_HELP)}</b>
-<b>Python : {pyver.split()[0]}</b>
-<b>Pyrogram : {pyrover}</b>
-<b>Pytgcalls : {pytgver}</b>
-<b>Prefixes : {xx}</b>
+𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗶𝘀 𝗮𝗰𝘁𝗶𝘃𝗲 !
+      𝗠𝗼𝗱𝘂𝗹𝗲: <b>{len(CMD_HELP)}</b>
+      𝗣𝘆𝘁𝗵𝗼𝗻: <b>{pyver.split()[0]}</b>
+      𝗣𝘆𝗿𝗼𝗴𝗿𝗮𝗺: <b>{pyrover}</b>
+      𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: <b>{pytgver}</b>
+      𝗣𝗿𝗲𝗳𝗶𝘅𝗲𝘀: <b>{xx}</b>
 """,
         )
     except (ChannelInvalid, PeerIdInvalid):
@@ -97,13 +96,12 @@ async def getFinish():
             await bot.send_message(
                 int(chat_id),
                 f"""
-<b>Userbot Successfully Deploy !!</b>
-
-<b>Modules : {len(CMD_HELP)}</b>
-<b>Python : {pyver.split()[0]}</b>
-<b>Pyrogram : {pyrover}</b>
-<b>Pytgcalls : {pytgver}</b>
-<b>Prefixes : {xx}</b>
+𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗶𝘀 𝗮𝗰𝘁𝗶𝘃𝗲 !
+      𝗠𝗼𝗱𝘂𝗹𝗲: <b>{len(CMD_HELP)}</b>
+      𝗣𝘆𝘁𝗵𝗼𝗻: <b>{pyver.split()[0]}</b>
+      𝗣𝘆𝗿𝗼𝗴𝗿𝗮𝗺: <b>{pyrover}</b>
+      𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: <b>{pytgver}</b>
+      𝗣𝗿𝗲𝗳𝗶𝘅𝗲𝘀: <b>{xx}</b>
 """,
             )
         except:
