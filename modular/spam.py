@@ -22,10 +22,13 @@ async def log_spam_result(jumlah_pesan, delay, target_chat):
         await bot.send_message(
             chat_id,
             f"""
-Spam selesai:
-    - Jumlah Pesan: {jumlah_pesan}
-    - Delay Antar Pesan: {delay} detik
-    - Target: {target_chat}
+𝗗𝘀𝗽𝗮𝗺/𝗗𝘀𝗽𝗮𝗺𝗳𝘄 𝗕𝗲𝗿𝗵𝗮𝘀𝗶𝗹 !
+<blockquote>𝗝𝘂𝗺𝗹𝗮𝗵 𝗽𝗲𝘀𝗮𝗻: <b>{jumlah_pesan}</b>
+𝗗𝗲𝗹𝗮𝘆 𝗽𝗲𝘀𝗮𝗻: <b>{delay} detik</b>
+𝗧𝗮𝗿𝗴𝗲𝘁 𝗹𝗽𝗺: <b>{target_chat}</b></blockquote>
+
+𝐁𝘭𝘶𝘦𝘧𝘭𝘰𝘺𝘥-Userbot v2.
+ 
 """,
         )
 
