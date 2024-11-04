@@ -71,7 +71,7 @@ async def _(c: nlx, m):
     reply = m.reply_to_message
     msg = await m.edit(cgr("proses").format(em.proses))
     berenti = True
-          await m.delete()
+    await m.delete()
     if reply:
         try:
             count_message = int(m.command[1])
