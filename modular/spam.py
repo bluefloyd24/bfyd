@@ -80,15 +80,24 @@ async def _(c: nlx, m):
     except Exception as error:
         return await msg.edit(str(error))
 
+    # Check the group's slow mode delay
+    chat = await c.get_chat(m.chat.id)
+    slow_mode_delay = chat.slow_mode_delay or 0  # 0 if no slow mode is set
+
+    # Use the larger delay between specified delay and the slow mode delay
+    adjusted_delay = max(count_delay, slow_mode_delay)
+
     for i in range(count_message):
         if not berenti:
             break
         try:
             await c.send_message(m.chat.id, text_to_send)
-            await asyncio.sleep(count_delay)
+            await asyncio.sleep(adjusted_delay)
         except Exception as e:
             await msg.edit(f"Error: {e}")
             break
+
+    berenti = False
 
     else:
         if len(m.command) < 4:
