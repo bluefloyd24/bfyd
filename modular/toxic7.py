@@ -144,7 +144,7 @@ async def _(c: nlx, m):
 #    await m.reply(
 #        "**SOKAB BET LU GOBLOK, KAGA ADA ISTILAH NYA BAWAHAN TEMENAN AMA BOS!!**",
 #        reply_to_message_id=ReplyCheck(m),
-    )
+#    )
 
 
 #@ky.ubot("gembel")
