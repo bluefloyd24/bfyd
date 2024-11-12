@@ -15,27 +15,27 @@ from pyrogram import *
 from Mix import *
 
 
-@ky.ubot("ganteng")
-async def _(c: nlx, m):
-    uputt = await m.reply(
-        "`Lu Mau Tau Sebuah Fakta?`", reply_to_message_id=ReplyCheck(m)
-    )
-    await asyncio.sleep(1.2)
-    await uputt.edit("`Fakta Yang Belum Terbongkar Selama Ini`")
-    await asyncio.sleep(1.2)
-    await uputt.edit("**GUA GANTENG FIX NO DEBAT😏**")
+#@ky.ubot("ganteng")
+#async def _(c: nlx, m):
+#    uputt = await m.reply(
+ #       "`Lu Mau Tau Sebuah Fakta?`", reply_to_message_id=ReplyCheck(m)
+#    )
+#    await asyncio.sleep(1.2)
+#    await uputt.edit("`Fakta Yang Belum Terbongkar Selama Ini`")
+#    await asyncio.sleep(1.2)
+#    await uputt.edit("**GUA GANTENG FIX NO DEBAT😏**")
 
 
-@ky.ubot("wibu")
+@ky.ubot("fs")
 async def _(c: nlx, m):
     if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
         await m.reply("**AKUN LO MO ILANG BANGSAT??**")
         return
-    uputt = await m.reply("`Kata Emak`", reply_to_message_id=ReplyCheck(m))
+    uputt = await m.reply("Kata Emak", reply_to_message_id=ReplyCheck(m))
     await asyncio.sleep(2)
-    await uputt.edit("`Kalo Ketemu Wibuu`")
+    await uputt.edit("Kalo ada flashsale")
     await asyncio.sleep(2)
-    await uputt.edit("`Harus Lari Sekenceng Mungkin🏃🏻`")
+    await uputt.edit("Harus harus dapet🏃🏻")
     await asyncio.sleep(3)
     await uputt.edit("`ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ🏃🏻`")
     await uputt.edit("`ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ🏃🏻💨`")
@@ -57,19 +57,19 @@ async def _(c: nlx, m):
     await uputt.edit("`ㅤㅤ🏃🏻💨ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ`")
     await uputt.edit("`ㅤ🏃🏻💨ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ`")
     await uputt.edit("`🏃🏻💨ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ`")
-    await uputt.edit("`🧎🏻‍♂️ huhh... akhirnya bisa lolos dari wibu mematikan`")
+    await uputt.edit("🧎🏻‍♂️ huhh..m04 asuuuuu")
 
 
 # create by ayiin
 
 
-@ky.ubot("ssenggol")
-async def _(c: nlx, m):
-    if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
-        await m.reply("**AKUN LO MO ILANG BANGSAT??**")
-        return
-    uputt = await m.reply(
-        "`Bapaknya Udin Di Makan Singkong`", reply_to_message_id=ReplyCheck(m)
-    )
-    await asyncio.sleep(1.8)
-    await uputt.edit("`Cuma Sendiri ni Senggol Dong`")
+#@ky.ubot("ssenggol")
+#async def _(c: nlx, m):
+#    if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
+#        await m.reply("**AKUN LO MO ILANG BANGSAT??**")
+#        return
+#    uputt = await m.reply(
+#        "`Bapaknya Udin Di Makan Singkong`", reply_to_message_id=ReplyCheck(m)
+#    )
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("`Cuma Sendiri ni Senggol Dong`")
