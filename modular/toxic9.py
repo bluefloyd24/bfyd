@@ -15,37 +15,37 @@ from pyrogram import *
 from Mix import *
 
 
-@ky.ubot("cacad")
-async def _(c: nlx, m):
-    if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
-        await m.reply("**AKUN LO MO ILANG BANGSAT??**")
-        return
-    uputt = await m.reply("**Cacad 😏**", reply_to_message_id=ReplyCheck(m))
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Najis Akunnya Cacad 😂**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Hahahaha Cacad 🤣**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Canda Akun Cacad 😂🤣**")
+#@ky.ubot("cacad")
+#async def _(c: nlx, m):
+#    if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
+#        await m.reply("**AKUN LO MO ILANG BANGSAT??**")
+#        return
+#    uputt = await m.reply("**Cacad 😏**", reply_to_message_id=ReplyCheck(m))
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Najis Akunnya Cacad 😂**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Hahahaha Cacad 🤣**")
+#    await asyncio.sleep(1.8)
+ #   await uputt.edit("**Canda Akun Cacad 😂🤣**")
 
 
-@ky.ubot("hayo")
-async def _(c: nlx, m):
-    if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
-        await m.reply("**AKUN LO MO ILANG BANGSAT??**")
-        return
-    uputt = await m.reply("**Hayolo 😂**", reply_to_message_id=ReplyCheck(m))
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Hayoloo 😭**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Hayolooo 😆**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Hayoloooo 😭🕺**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Hayolooooo 👻**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Haayolooooo 🤭**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Botnya Mati Ya?**")
-    await asyncio.sleep(1.8)
-    await uputt.edit("**Botnya Mati Ya? kasiaaaan** 😭🤌")
+#@ky.ubot("hayo")
+#async def _(c: nlx, m):
+#    if m.reply_to_message and m.reply_to_message.from_user.id in DEVS:
+#        await m.reply("**AKUN LO MO ILANG BANGSAT??**")
+#        return
+#    uputt = await m.reply("**Hayolo 😂**", reply_to_message_id=ReplyCheck(m))
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Hayoloo 😭**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Hayolooo 😆**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Hayoloooo 😭🕺**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Hayolooooo 👻**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Haayolooooo 🤭**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Botnya Mati Ya?**")
+#    await asyncio.sleep(1.8)
+#    await uputt.edit("**Botnya Mati Ya? kasiaaaan** 😭🤌")
