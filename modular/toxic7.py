@@ -17,7 +17,9 @@ from Mix import *
 
 @ky.ubot("ywc")
 async def _(c: nlx, m):
-    await m.edit("sama samaaa", reply_to_message_id=ReplyCheck(m))
+    reply_id = m.reply_to_message.message_id if m.reply_to_message else None
+    await m.edit_text("sama samaaa", reply_to_message_id=reply_id)
+
 
 
 #@ky.ubot("jamet")
