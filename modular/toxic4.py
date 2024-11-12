@@ -158,7 +158,7 @@ from Mix import *
 #    await uputt.edit("**UDAH SEJAGO APESI SAMPE GC DIBELA BELA**")
 #    await asyncio.sleep(1.8)
 #    await uputt.edit("**ORANG TUA LO NOH ADA YANG NAGIH UTANG UDA LO BELA BELOM?**")
-$#    await asyncio.sleep(1.8)
+#    await asyncio.sleep(1.8)
 ###    await uputt.edit("**RELA NGUTANG DEMI NGIDUPIN LU**")
 #    await asyncio.sleep(1.8)
 ##    await uputt.edit("**EH ANAKNYA MALAH NGEBELAIN GC GAJELAS HAHAHA**")
