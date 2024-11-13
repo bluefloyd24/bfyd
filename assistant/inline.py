@@ -481,3 +481,23 @@ async def _(c, iq):
         )
     ]
     await c.answer_inline_query(iq.id, cache_time=0, results=meki)
+
+
+@ky.inline("^payment")
+async def inline_payment(c, iq):
+    # Pesan untuk inline query pertama
+    msg = "Silakan lakukan pembayaran melalui channel pembayaran kami."
+    kb = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Klik untuk Pembayaran", url="https://t.me/your_default_payment_channel")]]
+    )
+
+    # Menyusun hasil inline query
+    meki = [
+        InlineQueryResultArticle(
+            title="Pembayaran",
+            input_message_content=InputTextMessageContent(msg),
+            reply_markup=kb
+        )
+    ]
+    await c.answer_inline_query(iq.id, cache_time=0, results=meki)
+
