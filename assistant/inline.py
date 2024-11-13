@@ -486,17 +486,16 @@ async def _(c, iq):
 
 @ky.inline("^payment")
 async def inline_payment(c, iq):
-    # Pesan untuk inline query pertama
-    msg = "Silakan lakukan pembayaran melalui channel pembayaran kami."
+    # Membuat inline keyboard yang mengarah ke PAYMENT_LINK terbaru
     kb = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("Klik untuk Pembayaran", url="https://t.me/your_default_payment_channel")]]
+        [[InlineKeyboardButton("Klik untuk Pembayaran", url=PAYMENT_LINK)]]
     )
 
-    # Menyusun hasil inline query
+    # Menyusun hasil inline query hanya dengan tombol
     meki = [
         InlineQueryResultArticle(
             title="Pembayaran",
-            input_message_content=InputTextMessageContent(msg),
+            input_message_content=InputTextMessageContent(""),  # Tanpa teks, hanya tombol
             reply_markup=kb
         )
     ]
