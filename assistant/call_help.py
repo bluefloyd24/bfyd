@@ -531,28 +531,5 @@ async def _(c, cq):
                     await cq.answer(f"FloodWait {e}, Please Waiting!!", True)
                     return
 
-
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from Mix import ky
-
-# Variabel global untuk menyimpan link pembayaran
-PAYMENT_LINK = "https://t.me/your_default_payment_channel"
-
-@ky.callback("^payment")
-async def payment_callback(c, cq):
-    # Pesan yang muncul saat tombol Payment ditekan
-    msg = "Silakan lakukan pembayaran dengan menekan tombol di bawah ini."
-
-    # Membuat inline keyboard yang mengarah ke PAYMENT_LINK terbaru
-    kb = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("Payment", url=PAYMENT_LINK)]]
-    )
-    
-    # Mengedit pesan untuk menampilkan tombol Payment dengan link yang diperbarui
-    await cq.edit_message_text(text=msg, reply_markup=kb)
-
-
-
- 
     except Exception as e:
         print(f"Error in callback handler: {e}")
