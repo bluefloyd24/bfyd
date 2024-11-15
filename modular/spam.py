@@ -167,8 +167,8 @@ async def _(c: nlx, message):
     try:
         
         _, count_str, delay_str, link = message.text.split(maxsplit=3)
-        count_message = int(count_str)
-        count_delay = int(delay_str)
+        count = int(count_str)
+        delay = int(delay_str)
     except ValueError:
         await proses.reply(cgr("spm_5").format(em.gagal, message.command))
         await proses.delete()   
@@ -211,6 +211,6 @@ async def _(c: nlx, message):
     await message.delete()
     await proses.delete() 
 
-    await log_spam_result(count_message, count_delay, m.chat.title or m.chat.id)
+    await log_spam_result(count, delay, m.chat.title or m.chat.id)
 
     await m.delete()
