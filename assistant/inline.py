@@ -482,22 +482,3 @@ async def _(c, iq):
         )
     ]
     await c.answer_inline_query(iq.id, cache_time=0, results=meki)
-
-
-@ky.inline("^payment")
-async def inline_payment(c, iq):
-    # Membuat inline keyboard yang mengarah ke PAYMENT_LINK terbaru
-    kb = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("Klik untuk Pembayaran", url=PAYMENT_LINK)]]
-    )
-
-    # Menyusun hasil inline query hanya dengan tombol
-    meki = [
-        InlineQueryResultArticle(
-            title="Pembayaran",
-            input_message_content=InputTextMessageContent(""),  # Tanpa teks, hanya tombol
-            reply_markup=kb
-        )
-    ]
-    await c.answer_inline_query(iq.id, cache_time=0, results=meki)
-
