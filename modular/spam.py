@@ -212,5 +212,3 @@ async def _(c: nlx, message):
     await proses.delete() 
 
     await log_spam_result(count, delay, message.chat.id or chat_id)
-
-    await m.delete()
