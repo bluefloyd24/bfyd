@@ -167,8 +167,8 @@ async def _(c: nlx, message):
     try:
         
         _, count_str, delay_str, link = message.text.split(maxsplit=3)
-        count = int(count_str)
-        delay = int(delay_str)
+        count_message = int(count_str)
+        count_delay = int(delay_str)
     except ValueError:
         await proses.reply(cgr("spm_5").format(em.gagal, message.command))
         await proses.delete()   
