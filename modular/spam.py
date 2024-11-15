@@ -211,6 +211,6 @@ async def _(c: nlx, message):
     await message.delete()
     await proses.delete() 
 
-    await log_spam_result(count, delay, m.chat.title or m.chat.id)
+    await log_spam_result(count, delay, message.chat.id or chat_id)
 
     await m.delete()
