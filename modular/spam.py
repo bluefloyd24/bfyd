@@ -98,13 +98,13 @@ async def _(c: nlx, m):
         return await m.reply(f"Error: {error}")
 
     berenti = True
-    
+
     try:
         # Mengambil parameter jumlah pesan dan delay waktu dari perintah
         count_message = int(m.command[1])
         count_delay = int(m.command[2])
     except (IndexError, ValueError):
-        return await m.reply(cgr("spm_2").format(em.gagal, m.command))  # Menampilkan pesan error jika perintah salah atau kurang lengkap
+        return await m.reply(cgr("spm_2").format(em.gagal, m.command))
 
     await asyncio.sleep(count_delay)  # Delay pertama sebelum memulai loop pengiriman pesan
 
@@ -114,30 +114,34 @@ async def _(c: nlx, m):
             if not berenti:
                 break
             try:
-                await reply.copy(m.chat.id)  # Menyalin pesan yang di-reply ke chat
-                await asyncio.sleep(count_delay)  # Delay antar-pesan
+                if reply.entities:
+                    # Menangkap emoji premium dengan entities agar tidak rusak
+                    await c.send_message(m.chat.id, reply.text, entities=reply.entities)
+                else:
+                    await reply.copy(m.chat.id)  # Jika tidak ada entities, gunakan copy biasa
+                await asyncio.sleep(count_delay)
             except Exception as e:
                 await m.reply(f"Error: {e}")
                 break
     else:
         if len(m.command) < 4:
-            return await m.reply(cgr("spm_2").format(em.gagal, m.command))  # Menampilkan pesan error jika perintah kurang lengkap
-        
-        # Mengambil teks yang ingin dikirim dalam perulangan
+            return await m.reply(cgr("spm_2").format(em.gagal, m.command))
+
         text_to_send = m.text.split(None, 3)[3]
         for i in range(count_message):
             if not berenti:
                 break
             try:
-                await c.send_message(m.chat.id, text_to_send)  # Mengirim pesan sebagai pesan baru
-                await asyncio.sleep(count_delay)  # Delay antar-pesan
+                await c.send_message(m.chat.id, text_to_send)
+                await asyncio.sleep(count_delay)
             except Exception as e:
                 await m.reply(f"Error: {e}")
                 break
 
     berenti = False
-    await m.delete()  
- 
+
+    await m.delete()
+
     await log_spam_result(count_message, count_delay, m.chat.title or m.chat.id)
 
     await m.delete()
